@@ -1,28 +1,29 @@
 package com.nostratech.belajar_springboot.web;
 
+import com.nostratech.belajar_springboot.config.ApplicationProperties;
 import com.nostratech.belajar_springboot.entity.Author;
 import com.nostratech.belajar_springboot.entity.Book;
 import com.nostratech.belajar_springboot.service.EmailService;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1/hello")
 public class HelloResource {
 
-    @Value("${test.name}")
-    private String name;
+    private final ApplicationProperties applicationProperties;
 
     private final EmailService emailService;
 
-    public HelloResource(EmailService emailService) {
+    public HelloResource(ApplicationProperties applicationProperties, EmailService emailService) {
+        super();
+        this.applicationProperties = applicationProperties;
         this.emailService = emailService;
     }
 
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public String hello() {
 
         Author author1 = emailService.getAuthor();
@@ -38,6 +39,6 @@ public class HelloResource {
         System.out.println("Email sent successfully");
 
 
-        return "hello "+ name;
+        return "Hello " + applicationProperties.getName() + " " + applicationProperties.getCurrency();
     }
 }

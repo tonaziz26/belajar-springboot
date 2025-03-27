@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+app:
+  name: test-yml
+  currency: IDR
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+server:
+  port: 8087

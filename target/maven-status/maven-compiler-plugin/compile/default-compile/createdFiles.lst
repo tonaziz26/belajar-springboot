@@ -2,6 +2,6 @@ com/nostratech/belajar_springboot/config/AppConfig.class
 com/nostratech/belajar_springboot/web/HelloResource.class
 com/nostratech/belajar_springboot/entity/Author.class
 com/nostratech/belajar_springboot/BelajarSpringbootApplication.class
-com/nostratech/belajar_springboot/web/EmailResource.class
+com/nostratech/belajar_springboot/config/AppConfig$1.class
 com/nostratech/belajar_springboot/entity/Book.class
 com/nostratech/belajar_springboot/service/EmailService.class

@@ -1,7 +1,7 @@
 /Users/faisalalbanatonaziz/kursus/belajar-springboot/src/main/java/com/nostratech/belajar_springboot/BelajarSpringbootApplication.java
 /Users/faisalalbanatonaziz/kursus/belajar-springboot/src/main/java/com/nostratech/belajar_springboot/config/AppConfig.java
+/Users/faisalalbanatonaziz/kursus/belajar-springboot/src/main/java/com/nostratech/belajar_springboot/config/ApplicationProperties.java
 /Users/faisalalbanatonaziz/kursus/belajar-springboot/src/main/java/com/nostratech/belajar_springboot/entity/Author.java
 /Users/faisalalbanatonaziz/kursus/belajar-springboot/src/main/java/com/nostratech/belajar_springboot/entity/Book.java
 /Users/faisalalbanatonaziz/kursus/belajar-springboot/src/main/java/com/nostratech/belajar_springboot/service/EmailService.java
-/Users/faisalalbanatonaziz/kursus/belajar-springboot/src/main/java/com/nostratech/belajar_springboot/web/EmailResource.java
 /Users/faisalalbanatonaziz/kursus/belajar-springboot/src/main/java/com/nostratech/belajar_springboot/web/HelloResource.java
