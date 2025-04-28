@@ -1,29 +1,35 @@
 package com.nostratech.belajar_springboot.service;
 
-import com.nostratech.belajar_springboot.web.AuthorDTO;
+import com.nostratech.belajar_springboot.entity.Author;
+import com.nostratech.belajar_springboot.repository.AuthorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class AuthorService {
 
-    List<AuthorDTO> authors = new ArrayList<>();
+    @Autowired
+    private AuthorRepository authorRepository;
 
-    public AuthorDTO createAuthor(AuthorDTO authorDTO) {
-        authors.add(authorDTO);
-        return authorDTO;
+    public Author createAuthor(Author author) {
+
+        authorRepository.save(author);
+        return author;
     }
 
-    public List<AuthorDTO> getAuthors() {
-        return authors;
+    public List<Author> getAuthors() {
+        return authorRepository.findAll();
     }
 
-    public AuthorDTO findByName(String name) {
-        return authors.stream()
-                .filter(author -> author.getName().equals(name))
-                .findFirst()
-                .orElse(null);
+    public Author findByName(String name) {
+        return authorRepository.findOneByName(name).orElse(null);
+    }
+
+    public List<Author> findByNameNative(String name) {
+
+        name = "%" + name + "%";
+        return authorRepository.findByNameLikeQueryNative(name);
     }
 }
